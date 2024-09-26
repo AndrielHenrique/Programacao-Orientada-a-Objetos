@@ -13,11 +13,15 @@ public class Principal {
         pc.setCor("Azul");
         
         Flor geranio = new Flor();
-        geranio.setP1(pa);
-        geranio.setP2(pb);
-        geranio.setP3(pc);
+//      geranio.setP1(pa);
+//      geranio.setP2(pb);
+//      geranio.setP3(pc);
+        geranio.adicionaPetala(pa);
+        geranio.adicionaPetala(pb);
+        geranio.adicionaPetala(pc);
         
-        pa = null;
+        pa.setCor("Preto");
+        //pa=null;
         
         geranio.mostrarPetalas();
         
