@@ -38,7 +38,7 @@ public class Circle {
 
         // B - exercicios criar um vetor de circulo e um metodo na classe para mostrar o
         // vetor
-        Circle[] vetorCircle = { c1, c1, c3 };
+        Circle[] vetorCircle = { c1, c2, c3 };
         imprimirVetorCirculos(vetorCircle);
 
         // Explicar 2: pq é possivel guardar os circulos em vetores e matrizes?
