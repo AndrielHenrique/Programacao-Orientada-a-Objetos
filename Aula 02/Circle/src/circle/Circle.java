@@ -6,7 +6,20 @@ public class Circle {
     // private String color;
     public double radius;
     public String color;
-
+    private Circle[] circle = new Circle[3];
+    private int index = 0;
+    
+    public void adicionaCircle(Circle c){
+        circle[0] = c;
+        index ++;
+    }
+    
+    public Circle(Circle c1, Circle c2, Circle c3){
+        circle[0] = c1;
+        circle[1] = c2;
+        circle[2] = c3;
+    }
+    
     public static void main(String[] args) {
 
         // 1-Criar a classe Cirle e as instânias da mesma.
@@ -38,8 +51,8 @@ public class Circle {
 
         // B - exercicios criar um vetor de circulo e um metodo na classe para mostrar o
         // vetor
-        Circle[] vetorCircle = { c1, c2, c3 };
-        imprimirVetorCirculos(vetorCircle);
+        
+        imprimirVetorCirculos();
 
         // Explicar 2: pq é possivel guardar os circulos em vetores e matrizes?
         // "ponteiros!!!" no java armazena a referencia para o objeto na memoria, e um
@@ -49,10 +62,7 @@ public class Circle {
         // referencias de endereços na memorai, cada um apontando para um objeto.
     }
 
-    public Circle() {
-        this.radius = 1.0;
-        this.color = "red";
-    }
+    public Circle() {};
 
     public Circle(double r) {
         this.radius = r;
@@ -86,12 +96,12 @@ public class Circle {
         return pi * radius * radius;
     }
 
-    public static void imprimirVetorCirculos(Circle[] vetCirculos) {
-        for (int i = 0; i < vetCirculos.length; i++) {
-            System.out.println("Percorrendo o vetor de Circulo  " + (i + 1) + ": ");
-            System.out.println("Raio: " + vetCirculos[i].getRadius());
-            System.out.println("Cor: " + vetCirculos[i].getColor());
-            System.out.println("Area: " + vetCirculos[i].getArea());
+    public void imprimirVetorCirculos() {
+        for (int i = 0; i < circle.length; i++) {
+            System.out.println("Percorrendo o vetor de Circulo  " + (i++) + ": ");
+            System.out.println("Raio: " + circle[i].getRadius());
+            System.out.println("Cor: " + circle[i].getColor());
+            System.out.println("Area: " + circle[i].getArea());
             System.out.println(" ");
         }
     }
