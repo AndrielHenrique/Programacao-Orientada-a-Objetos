@@ -7,10 +7,6 @@ public class JavaApplication3 {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
 
-        // System.out.println("Digite algo aqui: ");
-        // String input=leitor.nextLine();
-        // System.out.println(input+" "+input);
-
         int matriz[][] = null;
         while (true) {
 
@@ -41,13 +37,22 @@ public class JavaApplication3 {
                         System.out.println("Primeiro crie a matriz na op1");
                     }
                 }
+                
+                case 4 ->{
+                    if (matriz != null) {
+                        System.out.println("Op4 - Multiplicar a Matriz");
+                        multMatriz(leitor,matriz);
 
-                case 4 -> {
+                    } else {
+                        System.out.println("Primeiro crie a matriz na op1");
+                    }
+                }
+                case 5 -> {
                     System.out.println("Sair");
                     leitor.close();
                     return;
                 }
-                default -> System.out.println("Opcao invalida, escolha uma op de 1 a 4");
+                default -> System.out.println("Opcao invalida, escolha uma op de 1 a 5");
             }
         }
 
@@ -85,10 +90,13 @@ public class JavaApplication3 {
         }
     }
 
-    public static void apagarMatriz(int[][] mat) {
+    public static void multMatriz(Scanner leitor, int[][] mat) {
+        System.out.println("Informe o numero escalar para multiplicar a matriz: ");
+        int n = leitor.nextInt();
+        
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[0].length; j++) {
-                mat[i][j] = 0;
+                mat[i][j] *= n;
             }
         }
     }
