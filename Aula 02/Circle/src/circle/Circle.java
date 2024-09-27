@@ -8,18 +8,20 @@ public class Circle {
     public String color;
     private Circle[] circle = new Circle[3];
     private int index = 0;
-    
-    public void adicionaCircle(Circle c){
-        circle[0] = c;
-        index ++;
+
+    public void adicionaCircle(Circle c) {
+        circle[index] = c;
+        index++;
     }
-    
-    public Circle(Circle c1, Circle c2, Circle c3){
+
+    public Circle(Circle c1, Circle c2, Circle c3) {
         circle[0] = c1;
         circle[1] = c2;
         circle[2] = c3;
     }
     
+    public Circle(){};
+
     public static void main(String[] args) {
 
         // 1-Criar a classe Cirle e as instânias da mesma.
@@ -37,7 +39,7 @@ public class Circle {
         c1.setRadius(1.0);
         c1.setColor("blue");
         System.out.println("C1: \nRaio: " + c1.getRadius() + " \nCor: " + c1.getColor() + "\nArea: " + c1.getArea());
-
+        
         // 3. Para poder modificar é preciso mudar o estado, como ta privado, somente a
         // classe pode acessar, entao muda de private para public
         // Explicar: Não pode pois somente a classe tem acesso, já que é privado, ao
@@ -52,7 +54,8 @@ public class Circle {
         // B - exercicios criar um vetor de circulo e um metodo na classe para mostrar o
         // vetor
         
-        imprimirVetorCirculos();
+        Circle circleVetor = new Circle(c1,c2,c3);
+        circleVetor.imprimirVetorCirculos();
 
         // Explicar 2: pq é possivel guardar os circulos em vetores e matrizes?
         // "ponteiros!!!" no java armazena a referencia para o objeto na memoria, e um
@@ -61,8 +64,6 @@ public class Circle {
         // e sim uma referencia apontando para o objeto, e o vetor contem uma lista de
         // referencias de endereços na memorai, cada um apontando para um objeto.
     }
-
-    public Circle() {};
 
     public Circle(double r) {
         this.radius = r;
@@ -98,7 +99,7 @@ public class Circle {
 
     public void imprimirVetorCirculos() {
         for (int i = 0; i < circle.length; i++) {
-            System.out.println("Percorrendo o vetor de Circulo  " + (i++) + ": ");
+            System.out.println("Percorrendo o vetor de Circulo  " + (i+1) + ": ");
             System.out.println("Raio: " + circle[i].getRadius());
             System.out.println("Cor: " + circle[i].getColor());
             System.out.println("Area: " + circle[i].getArea());
